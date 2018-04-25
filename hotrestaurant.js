@@ -8,12 +8,7 @@ var PORT = process.env.PORT||3000;
 // Sets up the Express app to handle data parsing
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
-function Table(name, phone, unique, email){
-    this.name = name,
-    this.phone = phone,
-    this.unique = unique,
-    this.email = email
-}
+
 var reservations = [];
 var waitlist=[];
 
@@ -30,18 +25,23 @@ app.get("/reserve", function(req, res){
 app.get("/tables", function(req, res){
     res.sendFile(path.join(__dirname, "tables.html"))
 })
+
 app.post("/reserve", function(req, res){
-    var name = $("name").val();
-    var phone = $("phone").val();
-    var unique = $("unique").val();
-    var email = $("email").val();
-    var table = new Table(name, phone, unique, email);
+    var newTable = req.body;
+
+    // var name = $("name").val();
+    // var phone = $("phone").val();
+    // var unique = $("unique").val();
+    // var email = $("email").val();
+    // var table = new Table(name, phone, unique, email);
     if(reservation.length<5){
-        reservations.push(table);
+        reservations.push(newTable);
     }else{
-        waitlist.push(table);
+        waitlist.push(newTable);
     }
 })
+
+
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
