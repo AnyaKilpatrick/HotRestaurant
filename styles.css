@@ -24,6 +24,11 @@ body {
 }
 
 #name {
+}
+
+#submit {
+  margin: 10px;
+}
 
 #jumbo .jumbotron{
 	text-align: center;
