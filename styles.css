@@ -12,10 +12,16 @@ body {
 .center {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 3px solid gray;
     padding: 10px;
 }
 
+.jumbotron {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid gray; */
+    padding: 20px;
+}
 
 #name {
 
